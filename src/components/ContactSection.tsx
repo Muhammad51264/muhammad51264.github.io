@@ -1,4 +1,10 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,24 +17,17 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    message: ""
+    message: "",
   });
-  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your backend
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    setFormData({ name: "", email: "", message: "" });
-  };
+  const isFormEmpty = !formData.name || !formData.email || !formData.message;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -36,21 +35,21 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email",
-      value: "john.doe@example.com",
-      link: "mailto:john.doe@example.com"
+      value: "muh.freijat@gmail.com",
+      link: "mailto:muh.freijat@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+962 795781374",
+      link: "tel:+962795781374",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
-      link: "#"
-    }
+      value: "Jordan, Amman",
+      link: "#",
+    },
   ];
 
   return (
@@ -61,8 +60,9 @@ const ContactSection = () => {
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to start your next project? Let's work together to create 
-            something amazing. I'm always excited to hear about new opportunities.
+            Ready to start your next project? Let's work together to create
+            something amazing. I'm always excited to hear about new
+            opportunities.
           </p>
         </div>
 
@@ -72,11 +72,12 @@ const ContactSection = () => {
               <CardHeader>
                 <CardTitle className="text-2xl">Send a Message</CardTitle>
                 <CardDescription>
-                  Fill out the form below and I'll get back to you as soon as possible.
+                  Fill out the form below and I'll get back to you as soon as
+                  possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
                     <Input
@@ -88,7 +89,7 @@ const ContactSection = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
                     <Input
@@ -101,7 +102,7 @@ const ContactSection = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
                     <Textarea
@@ -114,15 +115,19 @@ const ContactSection = () => {
                       required
                     />
                   </div>
-                  
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground hover-glow"
+                  <a
+                    href={`mailto:muh.freijat@gmail.com?subject=Message from ${formData.name}&body=${formData.message}\n\nEmail: ${formData.email}`}
                   >
-                    <Send className="h-4 w-4 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
+                    <Button
+                      type="submit"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground hover-glow mt-6"
+                      disabled={isFormEmpty}
+                    >
+                      <Send className="h-4 w-4 mr-2" />
+                      Send Message
+                    </Button>
+                  </a>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -131,8 +136,8 @@ const ContactSection = () => {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
               <p className="text-muted-foreground mb-8">
-                I'm always open to discussing new opportunities, creative projects, 
-                or just having a chat about technology and innovation.
+                I'm always open to discussing new opportunities, creative
+                projects, or just having a chat about technology and innovation.
               </p>
             </div>
 
@@ -159,13 +164,17 @@ const ContactSection = () => {
 
             <Card className="glass-effect border-0 bg-primary/5">
               <CardContent className="p-6 text-center">
-                <h4 className="text-lg font-semibold mb-2">Available for Work</h4>
+                <h4 className="text-lg font-semibold mb-2">
+                  Available for Work
+                </h4>
                 <p className="text-sm text-muted-foreground mb-4">
                   Currently accepting new projects and collaborations
                 </p>
                 <div className="flex items-center justify-center space-x-2">
                   <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                  <span className="text-sm text-primary font-medium">Open to opportunities</span>
+                  <span className="text-sm text-primary font-medium">
+                    Open to opportunities
+                  </span>
                 </div>
               </CardContent>
             </Card>

@@ -5,24 +5,28 @@ const AboutSection = () => {
   const features = [
     {
       icon: Code,
-      title: "Clean Code",
-      description: "Writing maintainable, scalable code with best practices and modern patterns."
+      title: "Frontend Development",
+      description:
+        "Building responsive and maintainable web applications using React, Next.js, and Angular.",
     },
     {
-      icon: Palette,
-      title: "Creative Design",
-      description: "Crafting beautiful user interfaces that provide exceptional user experiences."
+      icon: Code,
+      title: "Backend Integration",
+      description:
+        "Integrating APIs and backend services using Node.js, Express.js, and Java Spring Boot.",
     },
     {
       icon: Rocket,
       title: "Performance",
-      description: "Building fast, optimized applications that deliver results efficiently."
+      description:
+        "Optimizing web applications for speed and efficiency on both frontend and backend.",
     },
     {
       icon: Users,
-      title: "Collaboration",
-      description: "Working effectively with teams to bring ideas to life and exceed expectations."
-    }
+      title: "Team Collaboration",
+      description:
+        "Contributing to agile teams for clients like Forbes and Hearst, delivering projects efficiently.",
+    },
   ];
 
   return (
@@ -33,8 +37,9 @@ const AboutSection = () => {
             About <span className="gradient-text">Me</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            I'm a passionate developer with 5+ years of experience creating digital solutions. 
-            I love turning complex problems into simple, beautiful designs that users enjoy.
+            I'm a passionate developer with 2+ years of experience building web
+            applications. I enjoy solving complex problems and delivering
+            efficient, maintainable, and scalable digital solutions.
           </p>
         </div>
 
@@ -42,17 +47,33 @@ const AboutSection = () => {
           <div className="animate-slide-in-left">
             <h3 className="text-2xl font-semibold mb-6">My Journey</h3>
             <p className="text-muted-foreground mb-4">
-              Started as a curious student learning HTML and CSS, I've evolved into a 
-              full-stack developer who thrives on creating meaningful digital experiences. 
-              My journey has taken me through various technologies and frameworks, always 
-              with a focus on clean code and user-centered design.
+              I'm a frontend and full-stack developer with experience on
+              projects for clients like Forbes and Hearst. I work with React,
+              Next.js, Node.js, and Java Spring Boot, focusing on clean,
+              maintainable, and efficient code.
             </p>
             <p className="text-muted-foreground mb-6">
-              When I'm not coding, you'll find me exploring new technologies, contributing 
-              to open source projects, or sharing knowledge with the developer community.
+              Outside of work, I explore new technologies, build personal
+              projects, and improve my development skills.
             </p>
             <div className="flex flex-wrap gap-2">
-              {["React", "TypeScript", "Node.js", "Python", "AWS"].map((tech) => (
+              {[
+                "HTML5",
+                "CSS3",
+                "JavaScript",
+                "TypeScript",
+                "React",
+                "Angular",
+                "Next.js",
+                "React Native",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Java",
+                "Spring Boot",
+                "Bootstrap",
+                "Git",
+              ].map((tech) => (
                 <span
                   key={tech}
                   className="px-3 py-1 text-sm bg-primary/10 text-primary rounded-full"

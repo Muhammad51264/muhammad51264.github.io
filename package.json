@@ -1,8 +1,9 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://Muhammad51264.github.io/REPO_NAME",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
